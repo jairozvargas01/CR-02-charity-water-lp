@@ -17,3 +17,131 @@ Fonts:
 - Avenir
 
 */
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Use Proxima Nova font, with Arial and sans-serif as backups */
+  font-family: 'Proxima Nova', Arial, sans-serif;
+  background-color: #fff9ec;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #fff9ec;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  background-color: #132c58;
+  color: #8BD1CB;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  /* Set the background image to screenshot.png */
+  background: url('img/screenshot.png') no-repeat center center/cover;
+  /* Mirror only the background image using background properties */
+  /* Use a CSS trick to flip only the background, not the content */
+  height: 90vh; /* 90% of the viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 50px;
+  margin-top: 0;
+  margin-bottom: 0;
+  /* Add this line to mirror only the background image */
+  background-position-x: right;
+  /* For some browsers, you can also try: */
+  /* background: url('img/screenshot.png') no-repeat right center/cover; */
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
+  /* background-position: right center; */
+}
+
+/* Place hero text and button on the right side, vertically centered */
+.hero-container {
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Stack text and button vertically */
+  align-items: flex-end;  /* Align to the right */
+  justify-content: center; /* Center vertically */
+  height: 100%;
+  gap: 20px; /* Space between text and button */
+  /* Removed transform: scaleX(-1); so text is not mirrored */
+}
+
+/* Remove absolute positioning for hero text */
+.hero-text-top-right {
+  position: static;
+  top: auto;
+  left: auto;
+  right: auto;
+  margin: 0;
+  max-width: 600px;
+  width: auto;
+  background-color: rgba(255,255,255,0.85);
+  padding: 30px;
+  border-radius: 8px;
+}
+
+/* Call to action button stays below the text */
+.cta-container {
+  margin-left: 0;
+  margin-bottom: 0;
+  transform: none;
+}
+
+.overlay {
+  max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.hero h1 {
+  font-size: 28px;
+  color: #b8523a;
+  margin-bottom: 20px;
+}
+
+.subtext {
+  background-color: rgba(146, 113, 75, 0.8);
+  padding: 15px;
+  color: white;
+  border-left: 5px solid #f15e42;
+  margin-bottom: 20px;
+}
+
+.cta {
+  background-color: #c55c3b;
+  color: #ffa4a4;
+  border: none;
+  padding: 16px 32px; /* Slightly smaller button */
+  font-size: 1.1em;   /* Slightly smaller text */
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
